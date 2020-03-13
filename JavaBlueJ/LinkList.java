@@ -28,7 +28,24 @@ public class LinkList
             current = current.next;
         }
     }
-
+    
+    int size()
+    {
+       Node scanner = start;
+       int size = 0;
+       Node x = start.next;
+       do
+       {
+        scanner = x.next;
+        x = scanner.next;
+        size++;
+        
+       }
+       while(x != null);
+       
+       return size;
+    }
+    
     void delete(int data)
     {
         Node scanner = start;
@@ -73,7 +90,7 @@ public class LinkList
         
             x = scanner;
             scanner = scanner.next;
-            x.next = scanner.next;
+            
             count++;
         }
         while(found == false);
