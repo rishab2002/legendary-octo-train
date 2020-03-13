@@ -8,18 +8,17 @@
 public class LinkList
 {
     Node start;
-    
-    
+
     void add(int data)
     {
         Node c = new Node(data);
-        
+
         c.next = start;
-        
+
         start = c;
-        
+
     }
-    
+
     void print()
     {
         Node current = start;
@@ -28,6 +27,23 @@ public class LinkList
             System.out.print(current.data + " ");
             current = current.next;
         }
+    }
+    
+    int size()
+    {
+       Node scanner = start;
+       int size = 0;
+       Node x = start.next;
+       do
+       {
+        scanner = x.next;
+        x = scanner.next;
+        size++;
+        
+       }
+       while(x != null);
+       
+       return size;
     }
     
     void delete(int data)
@@ -42,15 +58,43 @@ public class LinkList
                 start = scanner.next;
                 System.out.println();
                 System.out.println("FOUND DATA");
-                
-                
+
                 found = true;
             }
-            
+
             x = scanner;
             scanner = scanner.next;
             x.next = scanner.next;
         }
         while(found == false);
     }
+
+    void insert(int index , int data)
+    {
+        Node i = new Node(data);
+        Node scanner = start;
+        boolean found = false;
+        Node x = start.next;
+        int count = 0;
+        do
+        {
+            if(count == index)
+            {
+                Node y = scanner;
+                scanner = i;
+                i.next = y;
+                found = true;
+                
+            }
+        
+        
+            x = scanner;
+            scanner = scanner.next;
+            
+            count++;
+        }
+        while(found == false);
+    
+    }
 }
+  
