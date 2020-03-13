@@ -11,14 +11,17 @@ public class Runner
     {
         System.out.println(" ");
         LinkList l = new LinkList();
+        l.add(1);
+        l.add(2);
+        l.add(3);
+        l.add(4);
         l.add(5);
         l.add(6);
-        l.add(7);
-        l.add(123);
+        l.insert(4,69);
         l.print();
-        l.delete(6);
+        l.delete(4);
         System.out.println("----------");
-        System.out.println("DELETED 6");
+        System.out.println("DELETED 4");
         System.out.println("----------");
         l.print();
         
