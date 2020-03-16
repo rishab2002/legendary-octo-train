@@ -10,9 +10,17 @@ public class Node
    int data;
    Node next;
    
+   Song song;
+   
+   
    Node(int x)
    {
        data = x;
+       next = null;
+   }
+   Node(Song s)
+   {
+       song = s;
        next = null;
    }
 }

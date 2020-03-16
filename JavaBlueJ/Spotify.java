@@ -4,7 +4,7 @@ public class Spotify
 {
     public static void main (String [] args)
     {
-        LinkedList<Song>Playlist = new LinkedList<Song>();
+        LinkList Playlist = new LinkList();
         Scanner sc = new Scanner(System.in);
         boolean exit = false;
         System.out.println("How many songs would you like to add?");
@@ -28,21 +28,16 @@ public class Spotify
             if(choice.equals("1"))
             {  
                 //Scanner s = new Scanner(System.in);
-                for(int i = 0; i < size; i++)
-                {
-
-                    Playlist.get(i).playSong();
-
-                }
+                
 
             }
             else if(choice.equals("2"))
             {
                 for(int i = 0; i <size; i++)
                 {
-                    System.out.print("Song: " + Playlist.get(i).song);
-                    System.out.print("Artist: " + Playlist.get(i).artist);
-                    System.out.print("Length in Seconds: " + Playlist.get(i).length);
+                    System.out.print("Song: " + Playlist.getSong(i).song);
+                    System.out.print("Artist: " + Playlist.getSong(i).artist);
+                    System.out.print("Length in Seconds: " + Playlist.getSong(i).length);
                     System.out.println();
                 }
             }
@@ -57,14 +52,14 @@ public class Spotify
                 Scanner scan = new Scanner(System.in);
                 System.out.println("What song would you like to remove from your playlist?");
                 String rem = scan.nextLine();
-                if(Playlist.contains(rem))
+                if(Playlist.containsSong(rem))
                 {
                     for(int i = 0; i < size; i++)
                     {
-                        if(Playlist.get(i).song.equals(rem))
+                        if(Playlist.getSong(i).song.equals(rem))
                         {
-                            Song r = Playlist.get(i);
-                            Playlist.remove(r);
+                            Song r = Playlist.getSong(i);
+                            Playlist.delete(r);
                         }
                     }
                 }
