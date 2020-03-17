@@ -1,6 +1,7 @@
 
 public class BinaryTree {
 	Node root = null;
+	//BinaryTree
 	BinaryTree(int d)
 	{
 		
