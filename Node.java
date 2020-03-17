@@ -1,5 +1,6 @@
 
 public class Node {
+	//Node
 	int data = 0;
 	Node leftChild = null;
 	Node rightChild = null;
